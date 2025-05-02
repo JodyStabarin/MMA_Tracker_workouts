@@ -33,6 +33,10 @@
 			DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
 			LabelLogWorkout = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			LabelDuration = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			LabelType = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -44,16 +48,22 @@
 			LabelProgress = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			labelTrainingHistory = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			DataGriedViewHistory = new Guna.UI2.WinForms.Guna2DataGridView();
-			CharProgress = new OxyPlot.WindowsForms.PlotView();
-			comboBoxChart = new ComboBox();
-			ChartType = new OxyPlot.WindowsForms.PlotView();
-			ChartIntensity = new OxyPlot.WindowsForms.PlotView();
 			ID = new DataGridViewTextBoxColumn();
 			Date = new DataGridViewTextBoxColumn();
 			Duration = new DataGridViewTextBoxColumn();
 			Type = new DataGridViewTextBoxColumn();
 			Intensity = new DataGridViewTextBoxColumn();
+			Notes = new DataGridViewTextBoxColumn();
 			Delete = new DataGridViewButtonColumn();
+			CharProgress = new OxyPlot.WindowsForms.PlotView();
+			comboBoxChart = new ComboBox();
+			ChartType = new OxyPlot.WindowsForms.PlotView();
+			ChartIntensity = new OxyPlot.WindowsForms.PlotView();
+			LabelNotes = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			TextBoxNotes = new Guna.UI2.WinForms.Guna2TextBox();
+			ButtonReport = new Guna.UI2.WinForms.Guna2Button();
+			LabelLanguages = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			comboBoxLanguages = new ComboBox();
 			((System.ComponentModel.ISupportInitialize)DataGriedViewHistory).BeginInit();
 			SuspendLayout();
 			// 
@@ -105,7 +115,7 @@
 			ButtonLogWorkout.FillColor = Color.FromArgb(0, 120, 217);
 			ButtonLogWorkout.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			ButtonLogWorkout.ForeColor = Color.White;
-			ButtonLogWorkout.Location = new Point(12, 132);
+			ButtonLogWorkout.Location = new Point(12, 211);
 			ButtonLogWorkout.Name = "ButtonLogWorkout";
 			ButtonLogWorkout.ShadowDecoration.CustomizableEdges = customizableEdges2;
 			ButtonLogWorkout.Size = new Size(208, 30);
@@ -141,7 +151,7 @@
 			// 
 			LabelProgress.BackColor = Color.Transparent;
 			LabelProgress.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			LabelProgress.Location = new Point(12, 168);
+			LabelProgress.Location = new Point(12, 243);
 			LabelProgress.Name = "LabelProgress";
 			LabelProgress.Size = new Size(81, 27);
 			LabelProgress.TabIndex = 10;
@@ -174,7 +184,7 @@
 			DataGriedViewHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			DataGriedViewHistory.ColumnHeadersHeight = 19;
 			DataGriedViewHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-			DataGriedViewHistory.Columns.AddRange(new DataGridViewColumn[] { ID, Date, Duration, Type, Intensity, Delete });
+			DataGriedViewHistory.Columns.AddRange(new DataGridViewColumn[] { ID, Date, Duration, Type, Intensity, Notes, Delete });
 			dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle3.BackColor = Color.White;
 			dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -186,8 +196,9 @@
 			DataGriedViewHistory.GridColor = Color.FromArgb(224, 224, 224);
 			DataGriedViewHistory.Location = new Point(226, 45);
 			DataGriedViewHistory.Name = "DataGriedViewHistory";
+			DataGriedViewHistory.ReadOnly = true;
 			DataGriedViewHistory.RowHeadersVisible = false;
-			DataGriedViewHistory.Size = new Size(396, 117);
+			DataGriedViewHistory.Size = new Size(446, 225);
 			DataGriedViewHistory.TabIndex = 12;
 			DataGriedViewHistory.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
 			DataGriedViewHistory.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -202,7 +213,7 @@
 			DataGriedViewHistory.ThemeStyle.HeaderStyle.ForeColor = Color.White;
 			DataGriedViewHistory.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
 			DataGriedViewHistory.ThemeStyle.HeaderStyle.Height = 19;
-			DataGriedViewHistory.ThemeStyle.ReadOnly = false;
+			DataGriedViewHistory.ThemeStyle.ReadOnly = true;
 			DataGriedViewHistory.ThemeStyle.RowsStyle.BackColor = Color.White;
 			DataGriedViewHistory.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
 			DataGriedViewHistory.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -212,14 +223,62 @@
 			DataGriedViewHistory.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
 			DataGriedViewHistory.CellContentClick += DataGriedViewHistory_CellContentClick;
 			// 
+			// ID
+			// 
+			ID.FillWeight = 101.522842F;
+			ID.HeaderText = "ID";
+			ID.Name = "ID";
+			ID.ReadOnly = true;
+			// 
+			// Date
+			// 
+			Date.FillWeight = 99.61929F;
+			Date.HeaderText = "Date";
+			Date.Name = "Date";
+			Date.ReadOnly = true;
+			// 
+			// Duration
+			// 
+			Duration.FillWeight = 99.61929F;
+			Duration.HeaderText = "Duration";
+			Duration.Name = "Duration";
+			Duration.ReadOnly = true;
+			// 
+			// Type
+			// 
+			Type.FillWeight = 99.61929F;
+			Type.HeaderText = "Type";
+			Type.Name = "Type";
+			Type.ReadOnly = true;
+			// 
+			// Intensity
+			// 
+			Intensity.FillWeight = 99.61929F;
+			Intensity.HeaderText = "Intensity";
+			Intensity.Name = "Intensity";
+			Intensity.ReadOnly = true;
+			// 
+			// Notes
+			// 
+			Notes.HeaderText = "Notes";
+			Notes.Name = "Notes";
+			Notes.ReadOnly = true;
+			// 
+			// Delete
+			// 
+			Delete.HeaderText = "Delete";
+			Delete.Name = "Delete";
+			Delete.ReadOnly = true;
+			Delete.Text = "Delete";
+			// 
 			// CharProgress
 			// 
 			CharProgress.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 			CharProgress.BackColor = Color.White;
-			CharProgress.Location = new Point(12, 201);
+			CharProgress.Location = new Point(12, 276);
 			CharProgress.Name = "CharProgress";
 			CharProgress.PanCursor = Cursors.Hand;
-			CharProgress.Size = new Size(610, 248);
+			CharProgress.Size = new Size(660, 273);
 			CharProgress.TabIndex = 13;
 			CharProgress.Text = "plotView1";
 			CharProgress.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -229,9 +288,9 @@
 			// comboBoxChart
 			// 
 			comboBoxChart.FormattingEnabled = true;
-			comboBoxChart.Location = new Point(99, 172);
+			comboBoxChart.Location = new Point(99, 247);
 			comboBoxChart.Name = "comboBoxChart";
-			comboBoxChart.Size = new Size(121, 23);
+			comboBoxChart.Size = new Size(75, 23);
 			comboBoxChart.TabIndex = 14;
 			comboBoxChart.SelectedIndexChanged += comboBoxChart_SelectedIndexChanged;
 			// 
@@ -239,10 +298,10 @@
 			// 
 			ChartType.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 			ChartType.BackColor = Color.White;
-			ChartType.Location = new Point(12, 201);
+			ChartType.Location = new Point(12, 276);
 			ChartType.Name = "ChartType";
 			ChartType.PanCursor = Cursors.Hand;
-			ChartType.Size = new Size(610, 248);
+			ChartType.Size = new Size(660, 273);
 			ChartType.TabIndex = 15;
 			ChartType.Text = "plotView1";
 			ChartType.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -253,57 +312,93 @@
 			// 
 			ChartIntensity.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 			ChartIntensity.BackColor = Color.White;
-			ChartIntensity.Location = new Point(12, 201);
+			ChartIntensity.Location = new Point(12, 276);
 			ChartIntensity.Name = "ChartIntensity";
 			ChartIntensity.PanCursor = Cursors.Hand;
-			ChartIntensity.Size = new Size(610, 248);
+			ChartIntensity.Size = new Size(660, 273);
 			ChartIntensity.TabIndex = 16;
 			ChartIntensity.Text = "plotView1";
 			ChartIntensity.ZoomHorizontalCursor = Cursors.SizeWE;
 			ChartIntensity.ZoomRectangleCursor = Cursors.SizeNWSE;
 			ChartIntensity.ZoomVerticalCursor = Cursors.SizeNS;
 			// 
-			// ID
+			// LabelNotes
 			// 
-			ID.FillWeight = 101.522842F;
-			ID.HeaderText = "ID";
-			ID.Name = "ID";
+			LabelNotes.BackColor = Color.Transparent;
+			LabelNotes.Location = new Point(12, 132);
+			LabelNotes.Name = "LabelNotes";
+			LabelNotes.Size = new Size(34, 17);
+			LabelNotes.TabIndex = 17;
+			LabelNotes.Text = "Notes";
 			// 
-			// Date
+			// TextBoxNotes
 			// 
-			Date.FillWeight = 99.61929F;
-			Date.HeaderText = "Date";
-			Date.Name = "Date";
+			TextBoxNotes.CustomizableEdges = customizableEdges3;
+			TextBoxNotes.DefaultText = "";
+			TextBoxNotes.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+			TextBoxNotes.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+			TextBoxNotes.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+			TextBoxNotes.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+			TextBoxNotes.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+			TextBoxNotes.Font = new Font("Segoe UI", 9F);
+			TextBoxNotes.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+			TextBoxNotes.Location = new Point(99, 132);
+			TextBoxNotes.Name = "TextBoxNotes";
+			TextBoxNotes.PlaceholderText = "";
+			TextBoxNotes.SelectedText = "";
+			TextBoxNotes.ShadowDecoration.CustomizableEdges = customizableEdges4;
+			TextBoxNotes.Size = new Size(121, 73);
+			TextBoxNotes.TabIndex = 18;
 			// 
-			// Duration
+			// ButtonReport
 			// 
-			Duration.FillWeight = 99.61929F;
-			Duration.HeaderText = "Duration";
-			Duration.Name = "Duration";
+			ButtonReport.CustomizableEdges = customizableEdges5;
+			ButtonReport.DisabledState.BorderColor = Color.DarkGray;
+			ButtonReport.DisabledState.CustomBorderColor = Color.DarkGray;
+			ButtonReport.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+			ButtonReport.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+			ButtonReport.FillColor = SystemColors.Control;
+			ButtonReport.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			ButtonReport.ForeColor = Color.FromArgb(255, 109, 198);
+			ButtonReport.Location = new Point(180, 243);
+			ButtonReport.Name = "ButtonReport";
+			ButtonReport.ShadowDecoration.CustomizableEdges = customizableEdges6;
+			ButtonReport.Size = new Size(40, 27);
+			ButtonReport.TabIndex = 19;
+			ButtonReport.Text = "\U0001f9e0";
+			ButtonReport.Click += ButtonReport_Click;
 			// 
-			// Type
+			// LabelLanguages
 			// 
-			Type.FillWeight = 99.61929F;
-			Type.HeaderText = "Type";
-			Type.Name = "Type";
+			LabelLanguages.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+			LabelLanguages.BackColor = Color.Transparent;
+			LabelLanguages.Location = new Point(531, 16);
+			LabelLanguages.Name = "LabelLanguages";
+			LabelLanguages.Size = new Size(60, 17);
+			LabelLanguages.TabIndex = 20;
+			LabelLanguages.Text = "Languages";
 			// 
-			// Intensity
+			// comboBoxLanguages
 			// 
-			Intensity.FillWeight = 99.61929F;
-			Intensity.HeaderText = "Intensity";
-			Intensity.Name = "Intensity";
-			// 
-			// Delete
-			// 
-			Delete.HeaderText = "Delete";
-			Delete.Name = "Delete";
-			Delete.Text = "Delete";
+			comboBoxLanguages.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+			comboBoxLanguages.FormattingEnabled = true;
+			comboBoxLanguages.Location = new Point(597, 16);
+			comboBoxLanguages.Name = "comboBoxLanguages";
+			comboBoxLanguages.Size = new Size(75, 23);
+			comboBoxLanguages.TabIndex = 21;
+			comboBoxLanguages.SelectedIndexChanged += comboBoxLanguages_SelectedIndexChanged;
 			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(634, 461);
+			BackColor = SystemColors.Control;
+			ClientSize = new Size(684, 561);
+			Controls.Add(comboBoxLanguages);
+			Controls.Add(LabelLanguages);
+			Controls.Add(ButtonReport);
+			Controls.Add(TextBoxNotes);
+			Controls.Add(LabelNotes);
 			Controls.Add(ChartIntensity);
 			Controls.Add(ChartType);
 			Controls.Add(comboBoxChart);
@@ -344,11 +439,17 @@
 		private ComboBox comboBoxChart;
 		private OxyPlot.WindowsForms.PlotView ChartType;
 		private OxyPlot.WindowsForms.PlotView ChartIntensity;
+		private Guna.UI2.WinForms.Guna2HtmlLabel LabelNotes;
+		private Guna.UI2.WinForms.Guna2TextBox TextBoxNotes;
 		private DataGridViewTextBoxColumn ID;
 		private DataGridViewTextBoxColumn Date;
 		private DataGridViewTextBoxColumn Duration;
 		private DataGridViewTextBoxColumn Type;
 		private DataGridViewTextBoxColumn Intensity;
+		private DataGridViewTextBoxColumn Notes;
 		private DataGridViewButtonColumn Delete;
+		private Guna.UI2.WinForms.Guna2Button ButtonReport;
+		private Guna.UI2.WinForms.Guna2HtmlLabel LabelLanguages;
+		private ComboBox comboBoxLanguages;
 	}
 }

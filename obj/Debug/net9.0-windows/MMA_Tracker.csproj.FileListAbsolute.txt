@@ -76,3 +76,4 @@ C:\Users\jodys\Desktop\MMA_Tracker\bin\Debug\net9.0-windows\runtimes\win-x86\nat
 C:\Users\jodys\Desktop\MMA_Tracker\bin\Debug\net9.0-windows\runtimes\win\lib\net9.0\System.Diagnostics.EventLog.dll
 C:\Users\jodys\Desktop\MMA_Tracker\bin\Debug\net9.0-windows\runtimes\win\lib\net9.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\jodys\Desktop\MMA_Tracker\bin\Debug\net9.0-windows\appsettings.json
+C:\Users\jodys\Desktop\MMA_Tracker\obj\Debug\net9.0-windows\MMA_Tracker.sourcelink.json

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MMA_Tracker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3bb65fe2ce64524c92569e90c9a574a47674dbef")]
 [assembly: System.Reflection.AssemblyProductAttribute("MMA_Tracker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MMA_Tracker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
