@@ -7,8 +7,15 @@
       "RelativeMoniker": "D:0:0:{7BF4B633-9E9F-490A-8498-0E7FFC152E65}|MMA_Tracker.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BF4B633-9E9F-490A-8498-0E7FFC152E65}|MMA_Tracker.csproj|C:\\Users\\jodys\\Desktop\\MMA_Tracker\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7BF4B633-9E9F-490A-8498-0E7FFC152E65}|MMA_Tracker.csproj|c:\\users\\jodys\\desktop\\mma_tracker\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7BF4B633-9E9F-490A-8498-0E7FFC152E65}|MMA_Tracker.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BF4B633-9E9F-490A-8498-0E7FFC152E65}|MMA_Tracker.csproj|c:\\users\\jodys\\desktop\\mma_tracker\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7BF4B633-9E9F-490A-8498-0E7FFC152E65}|MMA_Tracker.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_JODYS_DOCUMENTS_MMADB.MDF/True/SqlTable/dbo.Data.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +25,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,12 +33,25 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\jodys\\Desktop\\MMA_Tracker\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\jodys\\Desktop\\MMA_Tracker\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-02T19:02:02.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs [Progettazione]",
               "DocumentMoniker": "C:\\Users\\jodys\\Desktop\\MMA_Tracker\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\jodys\\Desktop\\MMA_Tracker\\Form1.cs [Progettazione]*",
-              "RelativeToolTip": "Form1.cs [Progettazione]*",
+              "ToolTip": "C:\\Users\\jodys\\Desktop\\MMA_Tracker\\Form1.cs [Progettazione]",
+              "RelativeToolTip": "Form1.cs [Progettazione]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T14:02:08.796Z",
               "EditorCaption": " [Progettazione]"
@@ -42,12 +62,21 @@
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\jodys\\Desktop\\MMA_Tracker\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\jodys\\Desktop\\MMA_Tracker\\Form1.cs*",
-              "RelativeToolTip": "Form1.cs*",
-              "ViewState": "AgIAAK0BAAAAAAAAAAAAwNwBAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\jodys\\Desktop\\MMA_Tracker\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAJEBAAAAAAAAAAAswMMBAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T14:06:07.686Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbo.Data.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_JODYS_DOCUMENTS_MMADB.MDF/True/SqlTable/dbo.Data.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_JODYS_DOCUMENTS_MMADB.MDF/True/SqlTable/dbo.Data.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-02T18:59:32.277Z"
             }
           ]
         }

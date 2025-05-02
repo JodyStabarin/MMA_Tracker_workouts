@@ -82,25 +82,33 @@ namespace MMA_Tracker
 		}
 		public void DataGriedViewRefresh()
 		{
-			using (SqlConnection conn = new SqlConnection(connString))
+			try
 			{
-				conn.Open();
-				SqlCommand cmd = new SqlCommand("SELECT * FROM Data ORDER BY Date DESC", conn);
-				SqlDataReader reader = cmd.ExecuteReader();
-				while (reader.Read())
+				using (SqlConnection conn = new SqlConnection(connString))
 				{
-					DataGriedViewHistory.Rows.Add(
-						reader["Id"].ToString(),
-						reader["Date"].ToString(),
-						reader["Duration"].ToString(),
-						reader["Type"].ToString(),
-						reader["Intensity"].ToString(),
-						reader["Notes"].ToString()
-					);
+					conn.Open();
+					SqlCommand cmd = new SqlCommand("SELECT * FROM Data ORDER BY Date DESC", conn);
+					SqlDataReader reader = cmd.ExecuteReader();
+					while (reader.Read())
+					{
+						DataGriedViewHistory.Rows.Add(
+							reader["Id"].ToString(),
+							reader["Date"].ToString(),
+							reader["Duration"].ToString(),
+							reader["Type"].ToString(),
+							reader["Intensity"].ToString(),
+							reader["Notes"].ToString()
+						);
+					}
+					reader.Close();
 				}
-				reader.Close();
+				DataGriedViewHistory.Refresh();
 			}
-			DataGriedViewHistory.Refresh();
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+
+			}
 		}
 		private void InitializeGraphDuration()
 		{
@@ -173,22 +181,29 @@ namespace MMA_Tracker
 			var series = new BarSeries { Title = "Sessions", FillColor = OxyColors.SkyBlue };
 
 			typeCountsType.Clear();
-			using (SqlConnection conn = new SqlConnection(connString))
+			try
 			{
-				conn.Open();
-				var cmd = new SqlCommand("SELECT * FROM Data ORDER BY Date DESC", conn);
-				var reader = cmd.ExecuteReader();
-
-				while (reader.Read())
+				using (SqlConnection conn = new SqlConnection(connString))
 				{
-					string type = reader.GetString(reader.GetOrdinal("Type"));
-					if (typeCountsType.ContainsKey(type))
-						typeCountsType[type]++;
-					else
-						typeCountsType[type] = 1;
-				}
+					conn.Open();
+					var cmd = new SqlCommand("SELECT * FROM Data ORDER BY Date DESC", conn);
+					var reader = cmd.ExecuteReader();
 
-				reader.Close();
+					while (reader.Read())
+					{
+						string type = reader.GetString(reader.GetOrdinal("Type"));
+						if (typeCountsType.ContainsKey(type))
+							typeCountsType[type]++;
+						else
+							typeCountsType[type] = 1;
+					}
+
+					reader.Close();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
 			}
 
 			foreach (var kvp in typeCountsType)
@@ -225,23 +240,29 @@ namespace MMA_Tracker
 			var series = new BarSeries { Title = "Intensity", FillColor = OxyColors.SkyBlue };
 
 			typeCountsIntensity.Clear();
-
-			using (SqlConnection conn = new SqlConnection(connString))
+			try
 			{
-				conn.Open();
-				var cmd = new SqlCommand("SELECT * FROM Data ORDER BY Date DESC", conn);
-				var reader = cmd.ExecuteReader();
-
-				while (reader.Read())
+				using (SqlConnection conn = new SqlConnection(connString))
 				{
-					string intensity = reader.GetString(reader.GetOrdinal("Intensity"));
-					if (typeCountsIntensity.ContainsKey(intensity))
-						typeCountsIntensity[intensity]++;
-					else
-						typeCountsIntensity[intensity] = 1;
-				}
+					conn.Open();
+					var cmd = new SqlCommand("SELECT * FROM Data ORDER BY Date DESC", conn);
+					var reader = cmd.ExecuteReader();
 
-				reader.Close();
+					while (reader.Read())
+					{
+						string intensity = reader.GetString(reader.GetOrdinal("Intensity"));
+						if (typeCountsIntensity.ContainsKey(intensity))
+							typeCountsIntensity[intensity]++;
+						else
+							typeCountsIntensity[intensity] = 1;
+					}
+
+					reader.Close();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
 			}
 
 			foreach (var kvp in typeCountsIntensity)
@@ -293,13 +314,20 @@ namespace MMA_Tracker
 			if (e.ColumnIndex == DataGriedViewHistory.Columns["Delete"].Index && e.RowIndex >= 0)
 			{
 				int id = Convert.ToInt32(DataGriedViewHistory.Rows[e.RowIndex].Cells["Id"].Value);
-				using (SqlConnection conn = new SqlConnection(connString))
+				try
 				{
-					conn.Open();
-					SqlCommand cmd = new SqlCommand("DELETE FROM Data WHERE Id = @Id", conn);
-					cmd.Parameters.AddWithValue("@Id", id);
-					cmd.ExecuteNonQuery();
+					using (SqlConnection conn = new SqlConnection(connString))
+					{
+						conn.Open();
+						SqlCommand cmd = new SqlCommand("DELETE FROM Data WHERE Id = @Id", conn);
+						cmd.Parameters.AddWithValue("@Id", id);
+						cmd.ExecuteNonQuery();
 
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
 				}
 				DataGriedViewHistory.Rows.Clear();
 				DataGriedViewRefresh();
