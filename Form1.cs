@@ -500,5 +500,10 @@ namespace MMA_Tracker
 				DataGriedViewHistory.Columns["Delete"].HeaderText = "Elimina";
 			}
 		}
+
+		private void buttonRefreshData_Click(object sender, EventArgs e)
+		{
+			DataGriedViewRefresh();
+		}
 	}
 }

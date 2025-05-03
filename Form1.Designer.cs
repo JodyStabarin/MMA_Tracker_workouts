@@ -64,6 +64,7 @@
 			ButtonReport = new Guna.UI2.WinForms.Guna2Button();
 			LabelLanguages = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			comboBoxLanguages = new ComboBox();
+			buttonRefreshData = new Button();
 			((System.ComponentModel.ISupportInitialize)DataGriedViewHistory).BeginInit();
 			SuspendLayout();
 			// 
@@ -372,7 +373,7 @@
 			// 
 			LabelLanguages.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 			LabelLanguages.BackColor = Color.Transparent;
-			LabelLanguages.Location = new Point(531, 16);
+			LabelLanguages.Location = new Point(501, 12);
 			LabelLanguages.Name = "LabelLanguages";
 			LabelLanguages.Size = new Size(60, 17);
 			LabelLanguages.TabIndex = 20;
@@ -382,11 +383,24 @@
 			// 
 			comboBoxLanguages.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 			comboBoxLanguages.FormattingEnabled = true;
-			comboBoxLanguages.Location = new Point(597, 16);
+			comboBoxLanguages.Location = new Point(567, 12);
 			comboBoxLanguages.Name = "comboBoxLanguages";
 			comboBoxLanguages.Size = new Size(75, 23);
 			comboBoxLanguages.TabIndex = 21;
 			comboBoxLanguages.SelectedIndexChanged += comboBoxLanguages_SelectedIndexChanged;
+			// 
+			// buttonRefreshData
+			// 
+			buttonRefreshData.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+			buttonRefreshData.BackColor = SystemColors.Control;
+			buttonRefreshData.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			buttonRefreshData.Location = new Point(648, 12);
+			buttonRefreshData.Name = "buttonRefreshData";
+			buttonRefreshData.Size = new Size(24, 27);
+			buttonRefreshData.TabIndex = 22;
+			buttonRefreshData.Text = "🔄";
+			buttonRefreshData.UseVisualStyleBackColor = false;
+			buttonRefreshData.Click += buttonRefreshData_Click;
 			// 
 			// Form1
 			// 
@@ -394,6 +408,7 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.Control;
 			ClientSize = new Size(684, 561);
+			Controls.Add(buttonRefreshData);
 			Controls.Add(comboBoxLanguages);
 			Controls.Add(LabelLanguages);
 			Controls.Add(ButtonReport);
@@ -451,5 +466,6 @@
 		private Guna.UI2.WinForms.Guna2Button ButtonReport;
 		private Guna.UI2.WinForms.Guna2HtmlLabel LabelLanguages;
 		private ComboBox comboBoxLanguages;
+		private Button buttonRefreshData;
 	}
 }
