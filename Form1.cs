@@ -123,21 +123,27 @@ namespace MMA_Tracker
 			};
 			DateTime date;
 			int duration;
-
-			using (SqlConnection conn = new SqlConnection(connString))
+			try
 			{
-				conn.Open();
-				SqlCommand cmd = new SqlCommand("SELECT * FROM Data ORDER BY Date DESC", conn);
-				SqlDataReader reader = cmd.ExecuteReader();
-				while (reader.Read())
+				using (SqlConnection conn = new SqlConnection(connString))
 				{
-					date = reader.GetDateTime(reader.GetOrdinal("Date"));
-					duration = reader.GetInt32(reader.GetOrdinal("Duration"));
+					conn.Open();
+					SqlCommand cmd = new SqlCommand("SELECT * FROM Data ORDER BY Date DESC", conn);
+					SqlDataReader reader = cmd.ExecuteReader();
+					while (reader.Read())
+					{
+						date = reader.GetDateTime(reader.GetOrdinal("Date"));
+						duration = reader.GetInt32(reader.GetOrdinal("Duration"));
 
-					serie.Points.Add(new DataPoint(DateTimeAxis.ToDouble(date), duration));
+						serie.Points.Add(new DataPoint(DateTimeAxis.ToDouble(date), duration));
+					}
+
+					reader.Close();
 				}
-
-				reader.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
 			}
 
 			model.Series.Add(serie);
